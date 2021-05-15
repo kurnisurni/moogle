@@ -52,6 +52,7 @@ const Carousel = ({ media_type, id }) => {
     autoPlay
     responsive={responsive}
     infinite
+    disableButtonsControls 
     mouseTracking 
     items={items} />
   );
