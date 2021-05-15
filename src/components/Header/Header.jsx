@@ -1,5 +1,5 @@
 import './Header.css'
-import moogleLogo from '../../assets/logo.png'
+import moogleLogo from '../../assets/logo1.png'
 
 const Header = () => {
     return( 
