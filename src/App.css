@@ -15,3 +15,22 @@
         padding-top: 70px;
     }
 }
+
+.pageTitle {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-family: "Rubik", sans-serif;
+    font-size: 2vw;
+    border-radius: 50px;
+    color: #1d3b72;
+    -webkit-text-decoration: #a0148e double underline;
+    text-decoration: #a0148e double underline;
+    margin: 20px;
+}
+
+@media (max-width: 1000px) {
+    .pageTitle {
+        font-size: 6.4vw;
+    }
+}
