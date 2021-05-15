@@ -12,6 +12,7 @@ import {
 import "./InfoModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import Carousel from "../Carousel/Carousel";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -122,6 +123,10 @@ useEffect(() => {
                   <span className="InfoModal__description">
                     {content.overview}
                   </span>
+
+                  <div>
+                    <Carousel media_type={media_type} id={id} />
+                  </div>
 
                   <Button
                     variant="contained"
