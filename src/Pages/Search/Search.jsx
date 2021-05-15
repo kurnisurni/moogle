@@ -9,6 +9,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
 import Card from '../../components/Card/Card';
 import CustomPagination from '../../components/Pagination/CustomPagination';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+
+const theme = createMuiTheme({
+    typography: {
+      fontSize: 16,
+    },
+  });
 
 const Search = () => {
     const [type, setType] = useState(0);
@@ -19,7 +26,8 @@ const Search = () => {
     
     const fetchSearch = async () => {
         const { data } = await axios.get(
-            `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
+            `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${
+            process.env.REACT_APP_API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
         );
 
         setContent(data.results);
@@ -34,6 +42,7 @@ const Search = () => {
 
     return (
         <div>
+            <ThemeProvider theme={theme}>
             <div style= {{display: "flex", margin: "15px 0" }}>
             <TextField
             style={{ flex: 1 }}
@@ -75,7 +84,8 @@ const Search = () => {
             </div>
             {numOfPages > 1 && (
                 <CustomPagination setPage={setPage} numOfPages={numOfPages} />
-            )}         
+            )}     
+            </ThemeProvider>    
         </div>
     );
 };
