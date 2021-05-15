@@ -1,8 +1,10 @@
 import { Badge } from "@material-ui/core";
 import { img_300, unavailable } from '../../config/config';
 import "./Card.css";
+import InfoModal from '../InfoModal/InfoModal'
 
 const Card = ({ 
+    id,
     poster, 
     title, 
     date, 
@@ -11,7 +13,7 @@ const Card = ({
 }) => {
 
   return (
-    <div className="media">
+      <InfoModal media_type={media_type} id={id}>
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
@@ -22,7 +24,7 @@ const Card = ({
             {media_type === "tv" ? "TV Series" : "Movie"}
             <span className="subTitle">{date}</span>
         </span>
-    </div>
+        </InfoModal>
   );
 };
 
